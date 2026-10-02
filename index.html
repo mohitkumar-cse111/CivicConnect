@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicConnect - Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>CivicConnect</h1>
+
+            <p class="tagline">
+                Your voice. Your city. Your impact.
+            </p>
+
+            <h2 data-i18n="welcome">Welcome Back</h2>
+
+            <form action="dashboard.html ">
+
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Enter your password"
+                    required
+                >
+
+               <button type="submit" data-i18n="login">Login</button>
+
+            </form>
+
+            <div class="admin-login-link">
+    <p>Are you an administrator?</p>
+
+    <a href="admin-login.html">
+        Admin Login
+    </a>
+</div>
+
+            <p class="register-text">
+                Don't have an account?
+                <a href="register.html">
+                    Register
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="language-selector">
+
+    <label for="languageSelect">Language:</label>
+
+    <select id="languageSelect" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+        <option value="or">ଓଡ଼ିଆ</option>
+    </select>
+
+</div>
+
+<script src="js/language.js"></script>
+</body>
+</html>
+

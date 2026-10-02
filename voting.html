@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CivicConnect - Community Voting</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="logo">CivicConnect</div>
+
+        <a href="dashboard.html" class="logout-btn">
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+    <main class="voting-page">
+
+        <div class="voting-header">
+
+            <h1>Community Voting</h1>
+
+            <p>
+                Help your community decide which public works
+                should be prioritized next.
+            </p>
+
+        </div>
+
+
+        <!-- Area -->
+        <div class="area-selector">
+
+            <label for="area">Your Area</label>
+
+            <select id="area">
+
+                <option>Ward 5</option>
+                <option>Ward 4</option>
+                <option>Ward 6</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Voting Cards -->
+        <section class="priority-list">
+
+            <div class="priority-card">
+
+                <div class="priority-number">
+                    1
+                </div>
+
+                <div class="priority-content">
+
+                    <h2>💡 Street Light Improvement</h2>
+
+                    <p>
+                        Install and repair street lights
+                        in poorly lit areas.
+                    </p>
+
+                    <div class="vote-info">
+                        <strong>220 votes</strong>
+                    </div>
+
+                </div>
+
+                <button class="vote-btn">
+                    Vote
+                </button>
+
+            </div>
+
+
+            <div class="priority-card">
+
+                <div class="priority-number">
+                    2
+                </div>
+
+                <div class="priority-content">
+
+                    <h2>🚰 Drainage Improvement</h2>
+
+                    <p>
+                        Improve drainage systems to reduce
+                        waterlogging during rainfall.
+                    </p>
+
+                    <div class="vote-info">
+                        <strong>180 votes</strong>
+                    </div>
+
+                </div>
+
+                <button class="vote-btn">
+                    Vote
+                </button>
+
+            </div>
+
+
+            <div class="priority-card">
+
+                <div class="priority-number">
+                    3
+                </div>
+
+                <div class="priority-content">
+
+                    <h2>🗑️ Garbage Management</h2>
+
+                    <p>
+                        Improve waste collection and
+                        garbage management.
+                    </p>
+
+                    <div class="vote-info">
+                        <strong>90 votes</strong>
+                    </div>
+
+                </div>
+
+                <button class="vote-btn">
+                    Vote
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Information -->
+        <div class="voting-note">
+
+            <strong>How it works</strong>
+
+            <p>
+                Your vote helps create a community priority list.
+                The highest-priority projects can then be considered
+                for future public works and budgeting.
+            </p>
+
+        </div>
+<!-- Results -->
+<section class="results">
+
+    <div class="results-header">
+        <h2>Live Voting Results</h2>
+        <p>Current community voting status</p>
+    </div>
+
+    <div class="result-card">
+
+        <div class="result-info">
+            <span>💡 Street Light Improvement</span>
+            <strong id="result1">220 votes</strong>
+        </div>
+
+        <div class="progress">
+            <div id="bar1" class="progress-bar"></div>
+        </div>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <div class="result-info">
+            <span>🚰 Drainage Improvement</span>
+            <strong id="result2">180 votes</strong>
+        </div>
+
+        <div class="progress">
+            <div id="bar2" class="progress-bar"></div>
+        </div>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <div class="result-info">
+            <span>🗑️ Garbage Management</span>
+            <strong id="result3">90 votes</strong>
+        </div>
+
+        <div class="progress">
+            <div id="bar3" class="progress-bar"></div>
+        </div>
+
+    </div>
+
+
+    <div class="total-votes">
+        <strong id="totalVotes">Total Votes: 490</strong>
+    </div>
+
+</section>
+    </main>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CivicConnect - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="dashboard-header">
+
+        <div class="logo">
+            CivicConnect <span class="admin-label">Admin</span>
+        </div>
+
+        <a href="index.html" class="logout-btn">
+            Logout
+        </a>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <!-- Welcome -->
+        <section class="welcome-section">
+
+            <h1>Admin Dashboard 👨‍💼</h1>
+
+            <p>
+                Manage civic complaints, monitor progress
+                and track community priorities.
+            </p>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="admin-stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <h3>Total Complaints</h3>
+                <strong>124</strong>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <h3>Pending</h3>
+                <strong>32</strong>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🔄</div>
+                <h3>In Progress</h3>
+                <strong>48</strong>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <h3>Resolved</h3>
+                <strong>44</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Complaint Management -->
+        <section class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Complaint Management</h2>
+
+                    <p>
+                        Review and manage citizen complaints.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="complaint-table">
+
+                <!-- Table Header -->
+
+                <div class="table-row table-header">
+
+                    <div>Complaint ID</div>
+                    <div>Problem</div>
+                    <div>Ward</div>
+                    <div>Status</div>
+                    <div>Action</div>
+
+                </div>
+
+
+                <!-- Complaint 1 -->
+
+                <div class="table-row">
+
+                    <div>
+                        <strong>CG1024</strong>
+                    </div>
+
+                    <div>
+                        Road Pothole
+                    </div>
+
+                    <div>
+                        Ward 5
+                    </div>
+
+                    <div>
+                        <span class="status resolved">
+                            Resolved
+                        </span>
+                    </div>
+
+                    <div>
+                        <button class="admin-action">
+                            View
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- Complaint 2 -->
+
+                <div class="table-row">
+
+                    <div>
+                        <strong>CG1025</strong>
+                    </div>
+
+                    <div>
+                        Street Light Issue
+                    </div>
+
+                    <div>
+                        Ward 5
+                    </div>
+
+                    <div>
+                        <span class="status in-progress">
+                            In Progress
+                        </span>
+                    </div>
+
+                    <div>
+                        <button class="admin-action">
+                            View
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- Complaint 3 -->
+
+                <div class="table-row">
+
+                    <div>
+                        <strong>CG1026</strong>
+                    </div>
+
+                    <div>
+                        Drainage Problem
+                    </div>
+
+                    <div>
+                        Ward 4
+                    </div>
+
+                    <div>
+                        <span class="status pending">
+                            Pending
+                        </span>
+                    </div>
+
+                    <div>
+                        <button class="admin-action">
+                            View
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Complaint Details Panel -->
+
+<section class="admin-section complaint-details" id="complaintDetails">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Complaint Details</h2>
+
+            <p>
+                Review complaint information and update its status.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="details-grid">
+
+        <div>
+            <span>Complaint ID</span>
+            <strong id="detailId">CG1025</strong>
+        </div>
+
+        <div>
+            <span>Category</span>
+            <strong id="detailCategory">Street Light</strong>
+        </div>
+
+        <div>
+            <span>Ward</span>
+            <strong id="detailWard">Ward 5</strong>
+        </div>
+
+        <div>
+            <span>Current Status</span>
+            <strong id="detailStatus">In Progress</strong>
+        </div>
+
+    </div>
+
+
+    <div class="detail-description">
+
+        <h3>Description</h3>
+
+        <p id="detailDescription">
+            Street light is not working near Ward 5.
+        </p>
+
+    </div>
+<div class="detail-actions">
+
+    <label for="statusUpdate">
+        Update Status
+    </label>
+
+    <select id="statusUpdate">
+
+        <option value="Submitted">
+            Submitted
+        </option>
+
+        <option value="In Progress">
+            In Progress
+        </option>
+
+        <option value="Resolved">
+            Resolved
+        </option>
+
+    </select>
+
+    <button class="admin-action" id="updateStatusBtn">
+        Update Status
+    </button>
+
+</div>
+
+
+<!-- Assign Department -->
+
+<div class="detail-actions">
+
+    <label for="department">
+        Assign Department
+    </label>
+
+    <select id="department">
+
+        <option value="">
+            Select Department
+        </option>
+
+        <option value="Road Department">
+            Road Department
+        </option>
+
+        <option value="Electrical Department">
+            Electrical Department
+        </option>
+
+        <option value="Sanitation Department">
+            Sanitation Department
+        </option>
+
+        <option value="Drainage Department">
+            Drainage Department
+        </option>
+
+        <option value="Water Supply Department">
+            Water Supply Department
+        </option>
+
+    </select>
+
+    <button class="admin-action" id="assignDepartmentBtn">
+        Assign Department
+    </button>
+
+</div>
+
+
+<!-- Resolution Evidence -->
+
+<div class="resolution-evidence">
+
+    <h3>Resolution Evidence</h3>
+
+    <p>
+        Upload proof and add a note after resolving the complaint.
+    </p>
+
+    <label for="evidence">
+        Upload Evidence
+    </label>
+
+    <input
+        type="file"
+        id="evidence"
+        accept="image/*"
+    >
+
+    <label for="resolutionNote">
+        Resolution Note
+    </label>
+
+    <textarea
+        id="resolutionNote"
+        rows="4"
+        placeholder="Example: Street light repaired and tested successfully."
+    ></textarea>
+
+    <button
+        class="admin-action"
+        id="submitEvidenceBtn"
+    >
+        Submit Evidence
+    </button>
+
+</div>
+
+</section>
+
+        <!-- Community Voting -->
+        <section class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Community Voting Results</h2>
+
+                    <p>
+                        Current priorities selected by citizens.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="admin-voting">
+
+                <div class="admin-vote-item">
+
+                    <div>
+                        <strong>💡 Street Light Improvement</strong>
+                    </div>
+
+                    <span>221 votes</span>
+
+                </div>
+
+
+                <div class="admin-vote-item">
+
+                    <div>
+                        <strong>🚰 Drainage Improvement</strong>
+                    </div>
+
+                    <span>180 votes</span>
+
+                </div>
+
+
+                <div class="admin-vote-item">
+
+                    <div>
+                        <strong>🗑️ Garbage Management</strong>
+                    </div>
+
+                    <span>90 votes</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Activity -->
+        <section class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Recent Activity</h2>
+
+                    <p>
+                        Latest actions on the platform.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+                    <span>🟢</span>
+                    <p>
+                        Complaint <strong>CG1024</strong>
+                        marked as resolved.
+                    </p>
+                </div>
+
+
+                <div class="activity-item">
+                    <span>🔄</span>
+                    <p>
+                        Complaint <strong>CG1025</strong>
+                        moved to In Progress.
+                    </p>
+                </div>
+
+
+                <div class="activity-item">
+                    <span>📝</span>
+                    <p>
+                        New complaint <strong>CG1026</strong>
+                        received.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+<script>
+
+    const viewButtons = document.querySelectorAll(".admin-action");
+    const detailsPanel = document.getElementById("complaintDetails");
+
+    viewButtons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            detailsPanel.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        });
+
+    });
+
+</script>
+
+<script>
+
+    const statusUpdate = document.getElementById("statusUpdate");
+    const updateStatusBtn = document.getElementById("updateStatusBtn");
+    const detailStatus = document.getElementById("detailStatus");
+
+    updateStatusBtn.addEventListener("click", function() {
+
+        const newStatus = statusUpdate.value;
+
+        detailStatus.textContent = newStatus;
+
+        alert("Complaint status updated to: " + newStatus);
+
+    });
+
+</script>
+
+<script>
+
+    const department =
+        document.getElementById("department");
+
+    const assignDepartmentBtn =
+        document.getElementById("assignDepartmentBtn");
+
+    assignDepartmentBtn.addEventListener("click", function() {
+
+        if (department.value === "") {
+
+            alert("Please select a department.");
+
+            return;
+        }
+
+        alert(
+            "Complaint assigned to " +
+            department.value
+        );
+
+    });
+
+</script>
+
+<script>
+
+    const submitEvidenceBtn =
+        document.getElementById("submitEvidenceBtn");
+
+    submitEvidenceBtn.addEventListener("click", function() {
+
+        const evidence =
+            document.getElementById("evidence").files[0];
+
+        const note =
+            document.getElementById("resolutionNote").value;
+
+        if (!evidence) {
+            alert("Please upload resolution evidence.");
+            return;
+        }
+
+        if (!note.trim()) {
+            alert("Please add a resolution note.");
+            return;
+        }
+
+        alert("Resolution evidence submitted successfully!");
+
+    });
+
+</script>
+</body>
+</html>

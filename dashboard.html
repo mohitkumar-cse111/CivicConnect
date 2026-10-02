@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CivicConnect - Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+        <div class="logo">CivicConnect</div>
+
+        <a href="index.html" class="logout-btn">Logout</a>
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="welcome-section">
+            <h1>Hello, Citizen 👋</h1>
+
+            <p>
+                Report problems, track complaints and help
+                prioritize your community's needs.
+            </p>
+        </section>
+
+
+        <section class="action-grid">
+
+            <!-- Submit Complaint -->
+            <div class="dashboard-card">
+                <div class="card-icon">📝</div>
+
+                <h2>Submit Complaint</h2>
+
+                <p>
+                    Report a civic problem in your area.
+                </p>
+
+                <a href="complaint.html" class="card-btn">
+                    Submit Complaint
+                </a>
+            </div>
+
+
+            <!-- Track Complaint -->
+            <div class="dashboard-card">
+                <div class="card-icon">📍</div>
+
+                <h2>Track Complaint</h2>
+
+                <p>
+                    Check the status of your submitted complaints.
+                </p>
+
+                <a href="tracker.html" class="card-btn">
+                    Track Complaint
+                </a>
+            </div>
+
+
+            <!-- Community Voting -->
+            <div class="dashboard-card">
+                <div class="card-icon">🗳️</div>
+
+                <h2>Community Voting</h2>
+
+                <p>
+                    Vote for development priorities in your area.
+                </p>
+
+                <a href="voting.html" class="card-btn">
+                    View & Vote
+                </a>
+            </div>
+
+        </section>
+
+
+        <section class="recent-section">
+
+            <h2>Recent Complaints</h2>
+
+            <div class="complaint-item">
+
+                <div>
+                    <strong>CG1024</strong>
+                    <p>Road pothole - Ward 5</p>
+                </div>
+
+                <span class="status resolved">
+                    Resolved
+                </span>
+
+            </div>
+
+
+            <div class="complaint-item">
+
+                <div>
+                    <strong>CG1025</strong>
+                    <p>Street light issue - Ward 5</p>
+                </div>
+
+                <span class="status in-progress">
+                    In Progress
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

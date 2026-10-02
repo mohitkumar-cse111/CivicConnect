@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CivicConnect - Submit Complaint</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="dashboard-header">
+
+        <div class="logo">CivicConnect</div>
+
+        <a href="dashboard.html" class="logout-btn">
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+    <!-- Complaint Form -->
+    <main class="complaint-page">
+
+        <div class="complaint-box">
+
+            <h1>Submit a Complaint</h1>
+
+            <p class="complaint-intro">
+                Report a civic problem in your area.
+                Your complaint will be reviewed and routed
+                to the responsible department.
+            </p>
+
+
+            <form id="complaintForm">
+
+                <!-- Problem Description -->
+                <label for="description">
+                    Describe your problem
+                </label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Example: Street light is not working near Ward 5..."
+                    rows="5"
+                    required
+                ></textarea>
+
+
+                <!-- Category -->
+                <label for="category">
+                    Category
+                </label>
+
+                <select id="category" name="category" required>
+
+                    <option value="">
+                        Select a category
+                    </option>
+
+                    <option value="road">
+                        Road / Pothole
+                    </option>
+
+                    <option value="street-light">
+                        Street Light
+                    </option>
+
+                    <option value="garbage">
+                        Garbage / Waste
+                    </option>
+
+                    <option value="drainage">
+                        Drainage
+                    </option>
+
+                    <option value="water">
+                        Water Supply
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <!-- Location -->
+                <label for="location">
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Enter your area / ward"
+                    required
+                >
+
+
+                <!-- Image -->
+                <label for="evidence">
+                    Upload Image
+                    <span class="optional">(Optional)</span>
+                </label>
+
+                <input
+                    type="file"
+                    id="evidence"
+                    name="evidence"
+                    accept="image/*"
+                >
+
+                <p class="file-help">
+                    Upload a photo that helps explain the problem.
+                </p>
+
+
+                <!-- Submit -->
+                <button type="submit" class="submit-btn">
+                    Submit Complaint
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+<script>
+    const complaintForm = document.getElementById("complaintForm");
+
+    complaintForm.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const description =
+            document.getElementById("description").value;
+
+        const category =
+            document.getElementById("category").value;
+
+        const location =
+            document.getElementById("location").value;
+
+        try {
+
+            const response = await fetch(
+                "http://localhost:3000/api/complaints",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        title: category,
+                        description: description,
+                        ward: location
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (response.ok) {
+
+                alert(
+                    "Complaint submitted successfully!\n\n" +
+                    "Complaint ID: " + data.complaintId
+                );
+
+                window.location.href =
+                    "tracker.html";
+
+            } else {
+
+                alert(data.message);
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                "Server se connect nahi ho pa raha. " +
+                "Backend server running hai ya nahi check karo."
+            );
+
+        }
+
+    });
+</script>
+</body>
+
+</html>
